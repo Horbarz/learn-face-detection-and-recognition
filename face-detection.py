@@ -1,12 +1,17 @@
 '''
 Chapter 12: Face Detection and Recognition
+Detecting a Face
+
+Aileen Benedict
+July 9, 2018
 '''
 
 # Import the OpenCV library
 import cv2
 print ('OpenCV Version: ', cv2.__version__)
 
-
+# Error solution :')
+# https://stackoverflow.com/questions/30508922/error-215-empty-in-function-detectmultiscale
 HAARCASCADE_PATH = '../../../Downloads/opencv-3.4.2/data/haarcascades'
 
 # Initialize a face cascade using the frontal haar cascade provided

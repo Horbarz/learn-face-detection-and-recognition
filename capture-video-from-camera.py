@@ -1,3 +1,12 @@
+'''
+Getting Started with Videos
+Capture Video from Camera
+http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_gui/py_video_display/py_video_display.html
+
+Aileen Benedict
+July 9th, 2018
+'''
+
 import numpy as np 
 import cv2 
 
