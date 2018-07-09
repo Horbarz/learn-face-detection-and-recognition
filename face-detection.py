@@ -8,6 +8,7 @@ July 9, 2018
 
 # Import the OpenCV library
 import cv2
+# Display OpenCV Version :') Need at least 3.1.0
 print ('OpenCV Version: ', cv2.__version__)
 
 # Error solution :')
