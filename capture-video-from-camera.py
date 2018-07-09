@@ -12,7 +12,7 @@ while(True):
     # I can set the size of the window
     ret = cap.set(3, 320) # 3 is width property
     ret = cap.set(4, 240) # 4 is height propertly
-                          # (See notes on cap.get(PropID) below)
+                          # (See notes on cap.get(PropID))
 
     # Our operations on the frame come here
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
