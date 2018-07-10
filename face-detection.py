@@ -108,6 +108,9 @@ while True:
     # the right coordinate
     largeResult = cv2.resize(resultImage,
     (OUTPUT_SIZE_WIDTH, OUTPUT_SIZE_HEIGHT))
+
+    forfunzies = cv2.cvtColor(baseImage, cv2.COLOR_BGR2HLS)
+
     # Finally, we show the image on the screen
     cv2.imshow("base-image", baseImage)
     cv2.imshow('result-image', largeResult)
