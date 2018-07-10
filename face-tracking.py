@@ -54,6 +54,10 @@ tracker = dlib.correlation_tracker()
 # using dlib tracker or not
 trackingFace = 0
 
+# Using this to keep track of how many times the 
+# tracker needs to start over to find the face :') (for myself)
+counter = 0
+
 '''
 # Within infinite loop...
  1. Determine whether the dlib correlation tracker is currently tracking
@@ -83,12 +87,16 @@ while True:
         print('exit button pressed')
         break
 
+
+    resultImage = baseImage.copy()
+
+
     # --------------------------------------------------------------
 
 
     # If we are not tracking a face, then try to detect one using
     # the above code itself
-    if not trackingFace:
+    if trackingFace == 0:
         # We will be using a gray colored image for face detection.
         # So we need to convert the baseImage captured by webcam to a gray-based image
         gray = cv2.cvtColor(baseImage, cv2.COLOR_BGR2GRAY)
@@ -97,7 +105,8 @@ while True:
 
         # In the console, we can show that we are using this method
         # for detecting a face for the first time
-        print('Using the cascade detector to detect face')
+        counter = counter + 1
+        print(counter, ' Using the cascade detector to detect face')
 
         # --------------------------------------------------------------
         # From face-detection.py...
@@ -132,7 +141,7 @@ while True:
             trackingFace = 1
 
     # Check if the tracker is actively tracking a face in the image
-    if trackingFace:
+    if trackingFace == 1:
         
         # Update the tracker and request information about the
         # quality of the tracking update
@@ -158,5 +167,15 @@ while True:
             # the largest face in the image again
             trackingFace = 0
 
+    largeResult = cv2.resize(resultImage,
+    (OUTPUT_SIZE_WIDTH, OUTPUT_SIZE_HEIGHT))
+
+    # Finally, we show the image on the screen
+    cv2.imshow("base-image", baseImage)
+    cv2.imshow('result-image', largeResult)
+
         
 
+# Don't forget to release the camera!
+capture.release()
+cv2.destroyAllWindows()
