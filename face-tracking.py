@@ -144,7 +144,7 @@ while True:
             trackedPosition = tracker.get_position()
 
             t_x = int(trackedPosition.left())
-            t_y = int(trackedPositon.top())
+            t_y = int(trackedPosition.top())
             t_w = int(trackedPosition.width())
             t_h = int(trackedPosition.height())
             cv2.rectangle(resultImage, (t_x, t_y),
