@@ -116,5 +116,5 @@ while True:
     cv2.imshow('result-image', largeResult)
 
 # Don't forget to release the camera!
-cap.release()
+capture.release()
 cv2.destroyAllWindows()
